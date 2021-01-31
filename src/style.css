@@ -51,6 +51,7 @@ body {
 
 .crypto-form .btn {
   margin-left: calc(0.5rem + 0.5vw);
+  margin-top: calc(0.25rem + 1vh);
   display: inline-block;
   border: none;
   background-color: #ce1534;

@@ -20,14 +20,14 @@ class SearchCrypto extends React.Component {
                     placeholder = "Crypto Code"
                     className = "inp coin-code"
                     value = {this.state.coinCode}
-                    onChange = {e => {this.setState({coinCode: e.target.value})}}
+                    onChange = {e => {this.setState({coinCode: e.target.value.toUpperCase()})}}
                 />
                 <input
                     type = "text" 
                     placeholder = "Fiat Currency Code"
                     className = "inp currency-code"
                     value = {this.state.currencyCode}
-                    onChange = {e => {this.setState({currencyCode: e.target.value})}}
+                    onChange = {e => {this.setState({currencyCode: e.target.value.toUpperCase()})}}
                 />
                 <button className = "btn" type = "submit">Get Coin</button>
             </form>

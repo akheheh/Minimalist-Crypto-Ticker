@@ -2,20 +2,16 @@ import React from 'react';
 import Header from './Header';
 import SearchCrypto from './SearchCrypto';
 import Result from './Result';
-import axios from 'axios';
+
 import './style.css';
 
 class App extends React.Component {
-    state = {coinCode: "", currencyCode: "", price: ""}
+    state = {coinCode: "", currencyCode: ""}
 
-    setCoinCodes = async (coin, curr) => {
-        await axios.get(`https://api.cryptonator.com/api/ticker/${coin}-${curr}`).then(resp => {
-            console.log(resp);
-            this.setState({
-                coinCode: coin,
-                currencyCode: curr
-            });
-            this.setState({price: resp.data.ticker.price})
+    setCoinCodes = (coin, curr) => {
+        this.setState({
+            coinCode: coin,
+            currencyCode: curr
         });
     };
     render() {
@@ -29,7 +25,6 @@ class App extends React.Component {
                 <Result
                     coin = {this.state.coinCode} 
                     currency = {this.state.currencyCode}
-                    price = {this.state.price}
                 />
             </div>
         );
