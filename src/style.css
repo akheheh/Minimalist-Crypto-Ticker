@@ -1,0 +1,74 @@
+* {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Code Pro";
+}
+
+.view {
+  margin: calc(2rem + 1vw);
+}
+
+.header .title {
+  font-size: calc(3.5rem + 2vw);
+}
+
+.header .subtitle {
+  margin-top: 1.5rem;
+  font-size: calc(1.2rem + 1vw);
+  font-weight: 400;
+}
+
+.crypto-form {
+  margin-top: calc(2.5rem + 10vh);
+}
+
+.crypto-form .inp {
+  display: inline-block;
+  margin: 0 calc(1.5rem + 0.25vw);
+  padding: calc(0.5rem + 1vw);
+  font-size: calc(1.2rem + 0.75vw);
+  border: none;
+  border-bottom: 1px solid #050505;
+}
+
+.crypto-form .inp:focus {
+  outline: none;
+  border-bottom: 1px solid #ce1534;
+}
+
+.crypto-form .inp.coin-code {
+  margin-left: 0;
+}
+
+.crypto-form .inp.currency-code {
+  margin-left: 0;
+}
+
+.crypto-form .btn {
+  margin-left: calc(0.5rem + 0.5vw);
+  display: inline-block;
+  border: none;
+  background-color: #ce1534;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: calc(1.2rem + 0.75vw);
+  padding: calc(0.5rem + 1vw) calc(1.5rem + 1vw);
+}
+
+.results {
+  margin-top: calc(2.5rem + 10vh);
+}
+
+.results .coinTitle {
+  font-size: calc(1rem + 1vw);
+}
+
+.results .priceTitle {
+  font-size: calc(2rem + 1.5vw);
+  color: #ce1534;
+}
