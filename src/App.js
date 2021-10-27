@@ -1,34 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header';
 import SearchCrypto from './SearchCrypto';
 import Result from './Result';
 
 import './style.css';
 
-class App extends React.Component {
-    state = {coinCode: "", currencyCode: ""}
+const App = (props) => {
+    //const state = {token: "", currency: ""};
+    const [token, setToken] = useState("");
+    const [currency, setCurrency] = useState("");
+    //state = {coinCode: "", currencyCode: ""}
 
-    setCoinCodes = (coin, curr) => {
+    /*setCoinCodes = (coin, curr) => {
         this.setState({
             coinCode: coin,
             currencyCode: curr
         });
+    };*/
+    const setCoinCodes = (tok, curr) => {
+        setToken(tok);
+        setCurrency(curr);
+        console.log(tok);
+        console.log(curr);
     };
-    render() {
-        return(
-            <div className = "view">
-                <Header
-                    title = "Crypto Tracker"
-                    subtitle = "A minimalist cryptocurrency ticker and nothing else."
-                />
-                <SearchCrypto onSubmit = {this.setCoinCodes}/>
-                <Result
-                    coin = {this.state.coinCode} 
-                    currency = {this.state.currencyCode}
-                />
-            </div>
-        );
-    }
-}
-
+    
+    return(
+        <div className = "view">
+            <Header
+                title = "Crypto Tracker"
+                subtitle = "A minimalist cryptocurrency ticker and nothing else."
+            />
+            <SearchCrypto onSubmit = {setCoinCodes}/>
+            <Result
+                token = {token} 
+                currency = {currency}
+            />
+        </div>
+    );
+};
 export default App;
